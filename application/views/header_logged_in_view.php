@@ -28,24 +28,24 @@
 		<!-- CSS
 		================================================== -->
 		<!-- Bootstrap  -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<!-- web font  -->
 		<link href="<?php echo base_url();?>css/css.css" rel="stylesheet" type="text/css">
 		<!-- plugin css  -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/animate.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/magnific-popup.css">
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/style.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/flexslider.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/magnific-popup.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/flexslider.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.css">
 		<!-- Owl carousel-->
-		<link rel="stylesheet" href="<?php echo base_url();?>css/owl.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>css/owl_002.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/owl.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/owl_002.css">
 		<!-- icon fonts -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/custom-icons.css">
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/custom-icons-ie7.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-icons.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-icons-ie7.css">
 		<!-- Custom css -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/layout.css">
-		<link type="text/css" id="colors" rel="stylesheet" href="<?php echo base_url();?>css/colors.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/layout.css">
+		<link type="text/css" id="colors" rel="stylesheet" href="<?php echo base_url();?>assets/css/colors.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 		<script style="" src="<?php echo base_url();?>jquery/modernizr-2.js"></script>
