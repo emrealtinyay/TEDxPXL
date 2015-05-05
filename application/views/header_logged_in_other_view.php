@@ -85,7 +85,6 @@
 								<li><a href="<?php echo site_url()."#news";?>"><i class="icon-comment"></i>News</a> </li>
 								<li><a href="<?php echo site_url()."#about";?>"><i class="icon-star"></i>About</a> </li>
 								<li class=""><a href="<?php echo site_url()."#works";?>"><i class="icon-popup-1"></i>Events</a> </li>
-								<li class="active"><a href="<?php echo site_url()."#team";?>"><i class="icon-users"></i>Team</a> </li>
 								<li><a href="<?php echo site_url()."#contactSlice";?>"><i class="icon-mail"></i>Contact</a> </li>
 								<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-search"></i>Search</a>
 									

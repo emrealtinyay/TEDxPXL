@@ -13,7 +13,7 @@
 
 <style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style>
 <style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style>
-<link href="<?php echo base_url();?>css/css_002.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>assets/css/css_002.css" rel="stylesheet" type="text/css">
 <style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
 <style type="text/css">.gm-style div,.gm-style span,.gm-style label,.gm-style a{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400}.gm-style div,.gm-style span,.gm-style label{text-decoration:none}.gm-style img{border:0;padding:0;margin:0}</style>
 		<!-- Basic Page Needs
@@ -28,24 +28,24 @@
 		<!-- CSS
 		================================================== -->
 		<!-- Bootstrap  -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<!-- web font  -->
-		<link href="<?php echo base_url();?>css/css.css" rel="stylesheet" type="text/css">
+		<link href="<?php echo base_url();?>assets/css/css.css" rel="stylesheet" type="text/css">
 		<!-- plugin css  -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/animate.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/magnific-popup.css">
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/style.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/flexslider.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/magnific-popup.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/flexslider.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.css">
 		<!-- Owl carousel-->
-		<link rel="stylesheet" href="<?php echo base_url();?>css/owl.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>css/owl_002.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/owl.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/owl_002.css">
 		<!-- icon fonts -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/custom-icons.css">
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/custom-icons-ie7.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-icons.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-icons-ie7.css">
 		<!-- Custom css -->
-		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/layout.css">
-		<link type="text/css" id="colors" rel="stylesheet" href="<?php echo base_url();?>css/colors.css">
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/layout.css">
+		<link type="text/css" id="colors" rel="stylesheet" href="<?php echo base_url();?>assets/css/colors.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 		<script style="" src="<?php echo base_url();?>jquery/modernizr-2.js"></script>

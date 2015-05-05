@@ -16,7 +16,7 @@ class register extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('profile_model');
 		$this->load->library('flexi_auth');
-		$this->load->library('session');
+		//$this->load->library('session');
 	
 	}
 	
@@ -33,7 +33,7 @@ class register extends CI_Controller {
 		$this->form_validation->set_rules('register_emailadres', 'Email', 'trim|required|valid_email|xss_clean');	
 		$this->load->view('header_logged_out_other_view');
 		$this->load->view('register_view');
-		if($this->flexi_auth->is_logged_in() == false){
+		
 		
 		if($this->input->post('register_user')== 'Register'){		
 			if ($this->form_validation->run() == FALSE){
@@ -46,8 +46,6 @@ class register extends CI_Controller {
 			}
 		}
 		$this->load->view('footer_view');
-	}else{
-		redirect('fullpage_logged_in');
-	}
+	
 	}
 }

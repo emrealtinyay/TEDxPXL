@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://project.pjgrondelaers.com/';
+$config['base_url']	= 'http://localhost/TEDxPXL/';
 
 /*
 |--------------------------------------------------------------------------

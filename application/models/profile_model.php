@@ -30,8 +30,10 @@ class profile_model extends CI_Model {
 	function VoegGebruikerToe($data){	
 		$this->db->insert('userdata', $data);	
 		if ($this->db->affected_rows() == '1'){
+			echo 'gelukt';
 			return TRUE;
 		}
+		echo 'niet-gelukt';
 		return FALSE;
 	}
 	
