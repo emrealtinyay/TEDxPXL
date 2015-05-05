@@ -33,7 +33,7 @@ class CI_DB_driver {
 	var $username		= 'root';
 	var $password		= '';
 	var $hostname		= 'localhost';
-	var $Database 		= 'project';
+	var $Database 		= 'tedxpxl';
 	var $dbdriver		= 'mysql';
 	var $dbprefix		= '';
 	var $char_set		= 'utf8';
