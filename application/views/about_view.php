@@ -15,25 +15,25 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<h1>About us</h1>
-								<h2 class="subTitle">Hexion</h2>
+								<h2 class="subTitle">TEDxPXL</h2>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-4"> <img src="<?php echo base_url();?>images/AboutGroepsFoto.png" alt="services" class="img-responsive"> </div>
 							<div class="col-sm-4">
-								<h2>Hexion </h2>
+								<h2>TEDxPXL </h2>
 								<p>
-									Hexion is een opkomende studentenvereniging van departement PXL-IT. 
+									TEDxPXL is een opkomende studentenvereniging van departement PXL-IT. 
                                     Wij zijn een vereniging voor en door studenten.
                                     Bij ons kan je tevens ook terecht voor problemen met je lessen, 
                                     extra informatie, we halen projecten naar boven waar je praktijkpunten
-                                    mee kan verdienen en nog veel meer! Daarlangs komt Hexion ook naarbuiten 
+                                    mee kan verdienen en nog veel meer! Daarlangs komt TEDxPXL ook naarbuiten 
                                     als een echte studentenvereniging, Zo leren we je Hasselt en omstreken
                                     kennen zoals een echte student het bevalt. :) 
 								</p>
 							</div>
 							<div class="col-sm-4">
-								<h2>Eeuwig Hexion</h2>
+								<h2>Eeuwig TEDxPXL</h2>
 								<p> 
 									Een informaticus is lui dat weet iedereen
                                     En toch heeft hij steeds massa's werk
@@ -47,7 +47,7 @@
                                     De informaticus leeft, geef hem bier!
 								</p>
                                 <p>	
-									Hexion beveelt je gooi open je poort
+									TEDxPXL beveelt je gooi open je poort
                                     Een informaticus wenst een netwerk
                                     Die hij verlangt naar een digitaal oord
                                     Internet dat is zijn strijdperk
@@ -55,8 +55,8 @@
                                     Nee je systeem is hier niet mee gevleid
 								</p>
                                 <p>
-									Hexion eist toegang, geef hier!
-									Hexion heeft toegang, geef bier!
+									TEDxPXL eist toegang, geef hier!
+									TEDxPXL heeft toegang, geef bier!
 								</p>
                                 <p>
 									A.J. Schooleman 
