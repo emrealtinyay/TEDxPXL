@@ -30,13 +30,40 @@ class Fullpage_logged_in extends CI_Controller {
 	 *
 	 */
 	public function index(){
+		$year = date('Y');
+		$month = (int) date('m');
+		$this->display($year, $month);
+	}
+
+	public function display($year= null, $month = null){
+		if(!$year) 
+		{
+			$year = date('Y');
+		}
+		if(!$month) 
+		{
+			$month = date('m');
+		}
+
+		$this->load->model('mycal_logged_in_model');
+		
+		if($day = $this->input->post('day')) 
+		{
+			$this->mycal_logged_in_model->add_calendar_data(
+				"$year-$month-$day",
+				$this->input->post('data')
+			);
+		}
+
+		$data1['calendar'] = $this->mycal_logged_in_model->generate($year, $month);
+
 		if($this->flexi_auth->is_logged_in() == true){
 			$data = array( 'data' => $this->flexi_auth->get_user_by_id_row());
 			$data_foto['foto'] = $this->profile_model->haalGegevensOp($data['data']->uacc_username);
 			$data_totaal = array( 	'user_data' => $data,
 									'foto' => $data_foto
 			);		
-			$data1['data'] = $this->events_model->haalEventsOp();
+			//$data1['data'] = $this->events_model->haalEventsOp();
 		 	$this->load->view('header_logged_in_view', $data_totaal);
 			$this->load->view('home_view');
 			$leden['leden'] = $this->news_model->nieuwLeden();
