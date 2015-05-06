@@ -32,9 +32,17 @@ class Fullpage extends CI_Controller {
 	 *
 	 */
 	public function index(){
+
+		/* -------------- */
+			$this->load->library('calendar');
+			$data['calendar'] = $this->calendar->generate();
+			
+		/* -------------- */
+
+
 		if($this->flexi_auth->is_logged_in() == false){
-			$data['data'] = $this->events_model->haalEventsOp();
-			$data['css'] = 	
+			//$data['data'] = $this->events_model->haalEventsOp();
+				
 			$this->load->view('header_logged_out_view');
 			$this->load->view('home_view');
 			$leden['leden'] = $this->news_model->nieuwLeden();
