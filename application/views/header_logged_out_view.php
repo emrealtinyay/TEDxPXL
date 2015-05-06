@@ -27,6 +27,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!-- CSS
 		================================================== -->
+		<!-- Calendar -->
+		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/calendar.css">
 		<!-- Bootstrap  -->
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<!-- web font  -->

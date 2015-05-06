@@ -22,6 +22,7 @@ class Fullpage extends CI_Controller {
 		$this->auth = new stdClass;
 		$this->load->library('flexi_auth');
 		$this->load->library('session');		
+		
 	}
 	
 	/**
@@ -32,13 +33,32 @@ class Fullpage extends CI_Controller {
 	 *
 	 */
 	public function index(){
+		$year = date('Y');
+		$month = (int) date('m');
+		$this->display($year, $month);
+	}
 
-		/* -------------- */
-			$this->load->library('calendar');
-			$data['calendar'] = $this->calendar->generate();
-			
-		/* -------------- */
+	public function display($year= null, $month = null){
+		if(!$year) 
+		{
+			$year = date('Y');
+		}
+		if(!$month) 
+		{
+			$month = date('m');
+		}
 
+		$this->load->model('mycal_model');
+		
+		if($day = $this->input->post('day')) 
+		{
+			$this->mycal_model->add_calendar_data(
+				"$year-$month-$day",
+				$this->input->post('data')
+			);
+		}
+
+		$data['calendar'] = $this->mycal_model->generate($year, $month);
 
 		if($this->flexi_auth->is_logged_in() == false){
 			//$data['data'] = $this->events_model->haalEventsOp();
@@ -57,7 +77,7 @@ class Fullpage extends CI_Controller {
         	);
 			$this->load->view('news_view', $data_leden);
 			$this->load->view('about_view');
-			$this->load->view('events_view', $data);
+			$this->load->view('events_view',$data);
 			$this->load->view('team_view');
 			$this->form_validation->set_rules('name', 'Name', 'required|xss_clean|max_length[50]');			
 			$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');			
@@ -83,6 +103,8 @@ class Fullpage extends CI_Controller {
 		else{
 			redirect('/fullpage_logged_in');
 		}
-	
+
+
+		
 	}
 }
