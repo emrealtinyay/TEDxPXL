@@ -1,0 +1,1 @@
+<p>email verzonden naar <?php  echo $email?></p>
