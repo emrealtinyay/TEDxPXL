@@ -23,44 +23,14 @@
 							<div class="col-sm-4">
 								<h2>TEDxPXL </h2>
 								<p>
-									TEDxPXL is een opkomende studentenvereniging van departement PXL-IT. 
-                                    Wij zijn een vereniging voor en door studenten.
-                                    Bij ons kan je tevens ook terecht voor problemen met je lessen, 
-                                    extra informatie, we halen projecten naar boven waar je praktijkpunten
-                                    mee kan verdienen en nog veel meer! Daarlangs komt TEDxPXL ook naarbuiten 
-                                    als een echte studentenvereniging, Zo leren we je Hasselt en omstreken
-                                    kennen zoals een echte student het bevalt. :) 
+									TEDxPXL is an independently organized TED conference where speakers from around the world share cutting-edge ideas. During the breaks, attendees connect with each other through various interactive activities.TEDxPXL was founded in 2011 by three Hasselt University students and has remained a student-driven organization ever since.
 								</p>
 							</div>
 							<div class="col-sm-4">
-								<h2>Eeuwig TEDxPXL</h2>
+								<h2>Eeuwig TEDx</h2>
 								<p> 
-									Een informaticus is lui dat weet iedereen
-                                    En toch heeft hij steeds massa's werk
-                                    Uiterst geniaal ja dat zie je meteen
-                                    Wie had ooit gedacht oh zo sterk
-                                    In de nacht werkt hij door tot de zon weer op komt
-                                    Geen teken van leven, maar toch kerngezond
+									About TEDx, x = independently organized event In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TEDTalks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
 								</p>
-                                <p>
-                                    De informaticus leeft, hij is hier!
-                                    De informaticus leeft, geef hem bier!
-								</p>
-                                <p>	
-									TEDxPXL beveelt je gooi open je poort
-                                    Een informaticus wenst een netwerk
-                                    Die hij verlangt naar een digitaal oord
-                                    Internet dat is zijn strijdperk
-                                    Open of er wordt een virus verspreid
-                                    Nee je systeem is hier niet mee gevleid
-								</p>
-                                <p>
-									TEDxPXL eist toegang, geef hier!
-									TEDxPXL heeft toegang, geef bier!
-								</p>
-                                <p>
-									A.J. Schooleman 
-                                </p>
 							</div>
 						</div>
 					</div>

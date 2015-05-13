@@ -79,7 +79,7 @@
 								<span class="icon-bar"></span> 
 								<span class="icon-bar"></span> 
 							</button>
-							<a class="navbar-brand" href="http://project.pjgrondelaers.com">
+							<a class="navbar-brand" href="<?php echo base_url();?>index.php">
 							<img src="<?php echo base_url();?>images/menu_logo.png" alt="main logo"><!-- main-logo.png --></a>
 						</div>
 						<div class="collapse navbar-collapse navbar-ex1-collapse" id="scrollTarget">
