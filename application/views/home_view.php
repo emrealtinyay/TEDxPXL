@@ -7,8 +7,8 @@
 										<ul style="height: 1000%; position: absolute; width: 100%; transition-duration: 0.6s; transform: translate3d(0px, -1000px, 0px);" class="slides">
 											
 										<li class="flex-active-slide" style="display: block;">
-												<h1>Hexion</h1>
-												<h2>De studentenvereniging van PXL-IT te Hasselt.</h2>
+												<h1>TEDxPXL</h1>
+												<h2>De website voor alle nieuws</h2>
 											</li>
 											<li class="" style="display: block;">
 												<h1>News</h1>

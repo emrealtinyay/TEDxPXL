@@ -5,7 +5,7 @@ class Upload extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
 	function __construct(){
@@ -22,7 +22,7 @@ class Upload extends CI_Controller {
 	 * Deze functie upload een foto van een user.
 	 * Deze functie is van het internet gehaald source: http://ellislab.com/codeigniter%20/user-guide/libraries/file_uploading.html
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
 	function upload_user()
@@ -53,7 +53,7 @@ class Upload extends CI_Controller {
 	 * Deze functie upload een foto van een event.
 	 * Deze functie is van het internet source : http://ellislab.com/codeigniter%20/user-guide/libraries/file_uploading.html
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
 	function upload_event(){

@@ -5,7 +5,7 @@ class profile_edit extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens
 	 *
 	 */
 	function __construct(){
@@ -23,7 +23,7 @@ class profile_edit extends CI_Controller {
 	/**
 	 * Deze functie laad de profile edit pagina.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens
 	 *
 	 */
 	public function index(){		

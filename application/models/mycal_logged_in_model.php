@@ -1,6 +1,12 @@
 <?php 
+
 	class Mycal_logged_in_model extends CI_Model
 	{
+    /**
+	* 
+	* @author  Ali Eren
+	*
+	*/
 
 		var $conf;
 

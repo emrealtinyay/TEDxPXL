@@ -5,7 +5,7 @@ class admin extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
 	function __construct()
@@ -28,7 +28,7 @@ class admin extends CI_Controller {
 	/**
 	 * Deze functie laad de admin pagina.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
 	public function index(){
