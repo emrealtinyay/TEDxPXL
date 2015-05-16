@@ -22,7 +22,7 @@
 									<article>
 										<div><img src="<?php echo base_url();?>images/team_foto1.png" alt="team foto" class="img-team"></div><!-- pic1.jpg -->
 										<div class="boxContent color4">
-											<h3>Jordi 'Laat-X' Ijzendoorn</h3>
+											<h3>Elvis Presley</h3>
 											<p>Praeses</p>
 										</div>
 										<div class="boxContent"> <a href="mailto:jordi.ijzendoorn@student.pxl.be">jordi.ijzendoorn@student.pxl.be</a>
