@@ -13,7 +13,7 @@
 
 <style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style>
 <style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style>
-<link href="<?php echo base_url();?>css/css_002.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>assets/css/css_002.css" rel="stylesheet" type="text/css">
 <style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
 <style type="text/css">.gm-style div,.gm-style span,.gm-style label,.gm-style a{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400}.gm-style div,.gm-style span,.gm-style label{text-decoration:none}.gm-style img{border:0;padding:0;margin:0}</style>
 		<!-- Basic Page Needs
@@ -32,7 +32,7 @@
 		<!-- Bootstrap  -->
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<!-- web font  -->
-		<link href="<?php echo base_url();?>css/css.css" rel="stylesheet" type="text/css">
+		<link href="<?php echo base_url();?>assets/css/css.css" rel="stylesheet" type="text/css">
 		<!-- plugin css  -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/animate.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/magnific-popup.css">

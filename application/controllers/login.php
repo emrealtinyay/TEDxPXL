@@ -45,21 +45,42 @@ class login extends CI_Controller {
 
 	public function reset_password() 
 	{
-		if(isset($_POST['email']) && !empty($_POST['email']))
+		if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['username']) && !empty($_POST['username']))
 		{
 			$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 
 			if($this->form_validation->run() == FALSE) 
 			{
-
+				/* een view als email verkeerd is ingevoerd */
 			} 
 			else 
 			{
 				$email = $_POST['email'];
-				$this->send_reset_password_email($email, 'ali');
-				$this->load->view('header_logged_out_view');
-				$this->load->view('reset_password_sent_view', array('email' => $email));
-				$this->load->view('footer_view');
+				$username = $_POST['username'];
+				$this->load->model('profile_model');
+				$controleEmail = $this->profile_model->checkEmail($email);
+				$controleUsername = $this->profile_model->checkUsername($username);
+				
+				if($controleEmail == 0 || $controleUsername == 0) 
+				{
+					/* view voor email of gebruikersnaam bestaat niet bestaat niet !!*/
+				} 
+				else  
+				{
+					if($controleUsername == $controleEmail) 
+					{
+						$this->send_reset_password_email($email, $username);
+						$this->load->view('header_logged_out_view');
+						$this->load->view('reset_password_sent_view', array('email' => $email));
+						$this->load->view('footer_view');	
+					}
+					else 
+					{
+						/* view voor email en gebruikersnaam komen niet overeen*/
+					}
+				}
+				
 			}
 		} 
 		else 
@@ -83,8 +104,8 @@ class login extends CI_Controller {
 
 		$this->email->set_newline("\r\n");
 		$this->email->set_mailtype('html');
-		$this->email->from('alirn.93@gmail.com', 'Ali Eren');
-		$this->email->to('ali_eren@live.be');
+		$this->email->from('alirn.93@gmail.com', 'TedxPxl');
+		$this->email->to($email);
 		$this->email->subject('Please reset your password at TedxPxl');
 		$message ='<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 					"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html>
@@ -117,13 +138,14 @@ class login extends CI_Controller {
 
 	public function update_password() 
 	{
+		/* tweede chek als er tussendoor iemand in de url zelf een email in tikt kan je iemand anders zijn wachtwoord wijzigen */
 		if(!isset($_POST['email'], $_POST['email_hash']) || $_POST['email_hash'] !== sha1($_POST['email'].$_POST['email_code'])) 
 		{
 			die('Error updating your password');
 		}
 		else 
 		{
-
+			/* update uitvoeren moet nog gebeuren !!*/
 		}
 	}
 }
