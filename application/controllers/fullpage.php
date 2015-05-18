@@ -5,7 +5,7 @@ class Fullpage extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers, Glenn Bertjens
+	 *  -, Glenn Bertjens
 	 *
 	 */
 	function __construct()
@@ -29,7 +29,11 @@ class Fullpage extends CI_Controller {
 	 * Deze functie laad de home pagina.
 	 * !!!HET DESIGN VAN DE HELE HOMEPAGINA IS VAN HET INTERNET SOURCE : ASHLEY BOOTSTRAP!!!
 	 *
+<<<<<<< HEAD
+	 *  -, Glenn Bertjens
+=======
 	 * @author Glenn Bertjens, Ali Eren, Emre Altinyay
+>>>>>>> origin/master
 	 *
 	 */
 	public function index(){

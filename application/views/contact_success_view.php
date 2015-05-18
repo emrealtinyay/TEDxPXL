@@ -21,7 +21,7 @@
 										Elfde-Liniestraat 24<br>
 										3500 Hasselt<br>
 										tel. +32 11 77 55 55<br>
-										hexion@pxl.be<br>
+										TedPXL@pxl.be<br>
 									</address>
 								</div>								
 								<div class="maps" style="float: right;">

@@ -5,7 +5,11 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
+<<<<<<< HEAD
+	 *  -
+=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
+>>>>>>> origin/master
 	 *
 	 */
 	function __construct(){
@@ -20,7 +24,11 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie gaat iemand inloggen.
 	 *
+<<<<<<< HEAD
+	 *  -
+=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
+>>>>>>> origin/master
 	 *
 	 */
 	public function index(){	
