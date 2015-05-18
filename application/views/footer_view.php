@@ -4,7 +4,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<p>Copyright 2012 <a href="http://www.little-neko.com/" target="blank">Little NEKO</a> / All rights reserved.</p>
-										<p>&copy; Copyright 2014 Pieter-Jan Grondelaers, Glenn Bertjens</p>
+										<p>&copy; Copyright 2015 Glenn Bertjens, Emre Altinyay, Ali Eren</p>
 									</div>
 								</div>
 							</div>

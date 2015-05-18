@@ -5,7 +5,7 @@ class Fullpage_logged_in extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers, Glenn Bertjens
+	 *  -, Glenn Bertjens
 	 *
 	 */
 	function __construct(){
@@ -26,7 +26,7 @@ class Fullpage_logged_in extends CI_Controller {
 	/**
 	 * Deze functie laad de home pagina voor wie ingelogt is.
 	 *
-	 * @author  Pieter-Jan Grondelaers, Glenn Bertjens
+	 *  -, Glenn Bertjens
 	 *
 	 */
 	public function index(){

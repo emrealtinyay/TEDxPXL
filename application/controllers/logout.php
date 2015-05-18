@@ -5,7 +5,7 @@ class logout extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 *
 	 */
 	function __construct(){
@@ -20,7 +20,7 @@ class logout extends CI_Controller {
 	/**
 	 * Deze functie gaat de sessie stoppen en je uitloggen.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 *
 	 */
 	public function index(){		

@@ -5,7 +5,7 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 *
 	 */
 	function __construct(){
@@ -20,7 +20,7 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie gaat iemand inloggen.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 *
 	 */
 	public function index(){	

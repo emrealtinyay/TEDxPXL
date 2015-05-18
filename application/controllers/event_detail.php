@@ -5,7 +5,7 @@ class event_detail extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 *
 	 */
 	function __construct()
@@ -25,7 +25,7 @@ class event_detail extends CI_Controller {
 	/**
 	 * Deze functie laad de event detail pagina.
 	 *
-	 * @author  Pieter-Jan Grondelaers
+	 *  -
 	 * 
 	 *@param int	$id		een id van een event
 	 */
