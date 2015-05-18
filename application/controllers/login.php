@@ -5,11 +5,8 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	function __construct(){
@@ -24,11 +21,8 @@ class login extends CI_Controller {
 	/**
 	 * Deze functie gaat iemand inloggen.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	public function index(){	
@@ -64,15 +58,15 @@ class login extends CI_Controller {
 			} 
 			else 
 			{
-				$email = $_POST['email'];
-				$username = $_POST['username'];
+				$email = $this->input->post('email');
+				$username = $this->input->post('username');
 				$this->load->model('profile_model');
 				$controleEmail = $this->profile_model->checkEmail($email);
 				$controleUsername = $this->profile_model->checkUsername($username);
 				
 				if($controleEmail == 0 || $controleUsername == 0) 
 				{
-					/* view voor email of gebruikersnaam bestaat niet bestaat niet !!*/
+					echo 'view voor email of gebruikersnaam bestaat niet';
 				} 
 				else  
 				{
@@ -85,7 +79,7 @@ class login extends CI_Controller {
 					}
 					else 
 					{
-						/* view voor email en gebruikersnaam komen niet overeen*/
+						echo 'gebruikersnaam en email komen niet overeen';
 					}
 				}
 				
@@ -119,7 +113,7 @@ class login extends CI_Controller {
 					"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html>
 					<meta http-equiv="Content-Type" content="text/html; charset-utf-8"/>
 					</head><body>';
-		$message .='<p>Dear'.$name.',</p>';
+		$message .='<p>Dear '.$name.',</p>';
 		$message .='<p>We want to help you reset your password! Please <strong><a href="'.base_url().'index.php/login/reset_password_form/'.$email.'/'.$email_code.'">click here</a></strong> to reset your password.</p>';
 		$message .='<p>Thank you!</p>';
 		$message .='<p>The Team at TedxPxl</p>';
@@ -149,11 +143,31 @@ class login extends CI_Controller {
 		/* tweede chek als er tussendoor iemand in de url zelf een email in tikt kan je iemand anders zijn wachtwoord wijzigen */
 		if(!isset($_POST['email'], $_POST['email_hash']) || $_POST['email_hash'] !== sha1($_POST['email'].$_POST['email_code'])) 
 		{
-			die('Error updating your password');
+			echo "nnee";
 		}
 		else 
 		{
-			/* update uitvoeren moet nog gebeuren !!*/
+			$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+			$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|xss_clean');
+
+			if($this->form_validation->run() == FALSE) 
+			{
+				echo 'velden moeten ingevuld worden';
+			} 
+			else 
+			{
+				$pas1 = $this->input->post('password');
+				$pas2 = $this->input->post('password_conf');
+
+				if($pas1 == $pas2) 
+				{
+					echo 'wachtwoord uploaded';
+				}
+				else 
+				{
+					echo 'wachtwoorden komen niet overeen';
+				}
+			}
 		}
 	}
 }

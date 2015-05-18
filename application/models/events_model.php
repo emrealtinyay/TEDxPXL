@@ -5,11 +5,8 @@ class events_model extends CI_Model {
 	/**
 	 * Deze functie voegt een event toe in de tabel events.
 	 * 
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 * 
 	 * @param array    $eventData  Array met de data van een event.
 	 * @return Bool - TRUE or FALSE
@@ -25,11 +22,8 @@ class events_model extends CI_Model {
 	/**
 	 * Deze functie haalt alle events op uit de tabel events.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	function haalEventsOp(){
@@ -41,11 +35,8 @@ class events_model extends CI_Model {
 	/**
 	 * Deze functie haalt 1 specifiek event uit de tabel events.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 * @param int   $id  Het id van het event.
 	 */
@@ -60,11 +51,8 @@ class events_model extends CI_Model {
 	 * Deze functie voegt een waarde toe in die kolom foto 
 	 * voor een specifiek event in de tabel events.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 * @param array    	$data  	Array met de data van een foto.
 	 * @param String	$naam	De naam van het event waar de foto aan toebehoord.

@@ -29,11 +29,8 @@ class Fullpage extends CI_Controller {
 	 * Deze functie laad de home pagina.
 	 * !!!HET DESIGN VAN DE HELE HOMEPAGINA IS VAN HET INTERNET SOURCE : ASHLEY BOOTSTRAP!!!
 	 *
-<<<<<<< HEAD
 	 *  -, Glenn Bertjens
-=======
 	 * @author Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	public function index(){

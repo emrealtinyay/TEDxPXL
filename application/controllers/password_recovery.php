@@ -5,11 +5,8 @@ class password_recovery extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
-<<<<<<< HEAD
 	 * 
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	function __construct(){
@@ -24,11 +21,8 @@ class password_recovery extends CI_Controller {
 	/**
 	 * Deze functie gaat de sessie stoppen en je uitloggen.
 	 *
-<<<<<<< HEAD
 	 *  -
-=======
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
->>>>>>> origin/master
 	 *
 	 */
 	public function index(){		

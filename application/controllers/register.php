@@ -38,12 +38,35 @@ class register extends CI_Controller {
 		if($this->input->post('register_user')== 'Register'){		
 			if ($this->form_validation->run() == FALSE){
 				$this->load->view('register_failed_view');
-			}else{
-				/* Controle als email of gebruikersnaam al bestaat !!*/
-				$this->flexi_auth->insert_user($this->input->post('register_emailadres'), $this->input->post('register_gebruikersnaam'), $this->input->post('register_wachtwoord'), false, false,true);
-				$data = array( 'username' => $this->input->post('register_gebruikersnaam'));
-				$this->profile_model->VoegGebruikerToe($data);
-				redirect('/fullpage');
+			}
+			else
+			{
+				$email = $this->input->post('register_emailadres');
+				$gebruikersnaam = $this->input->post('register_gebruikersnaam');
+				$this->load->model('profile_model');
+				$controleUsername = $this->profile_model->checkUsername($gebruikersnaam);
+				$controleEmail = $this->profile_model->checkEmail($email);
+
+				if($controleUsername == 0)
+				{
+					if($controleEmail == 0)
+					{
+						$this->flexi_auth->insert_user($email, $gebruikersnaam, $this->input->post('register_wachtwoord'), false, false,true);
+						$data = array( 'username' => $this->input->post('register_gebruikersnaam'));
+						$this->profile_model->VoegGebruikerToe($data);
+						redirect('/fullpage');
+					}
+					else 
+					{
+						echo 'email bestaat al';
+					}
+				}
+				else 
+				{
+					echo 'gebruikersnaam bestaat al';
+				}
+
+				
 			}
 		}
 		$this->load->view('footer_view');

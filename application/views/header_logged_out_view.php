@@ -120,7 +120,7 @@
 												  <input type='submit' id='login' name='login' value='Login' class="btn-custom-search" />
 											  
 												  <a href="<?php echo base_url();?>index.php/register">Registreren</a>
-												  <a href="<?php echo base_url();?>index.php/login/reset_password">Passwoord vergeten</a>
+												  <a href="<?php echo base_url();?>index.php/login/reset_password">Paswoord vergeten</a>
 											</div>
 										<?php echo form_close();?>
 									</ul>
