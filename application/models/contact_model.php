@@ -37,7 +37,11 @@ class Contact_model extends CI_Model {
 	/**
 	 * Deze functie haalt alle contact gegevens op voor de admin pagina.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 */
 	function HaalContactGegevensOp(){
@@ -49,7 +53,11 @@ class Contact_model extends CI_Model {
 	/**
 	 * Deze functie verwijderd 1 rij uit de contact_table tabel.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 * @param int    $id  dit is het id van een gebruiker.
 	 * @return Bool - TRUE or FALSE

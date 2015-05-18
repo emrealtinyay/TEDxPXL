@@ -5,7 +5,11 @@ class profile_model extends CI_Model {
 	/**
 	 * Deze functie gaat de persoonlijke gegevens van een user updaten in de userdata tabel.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 * @param array    $data  Array met de data van een user.
 	 * @return Bool - TRUE or FALSE
@@ -22,7 +26,11 @@ class profile_model extends CI_Model {
 	/**
 	 * Deze functie voegt een gebruiker toe aan de userdata tabel wanneer hij zich registreert.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 * @param array    $data  Array met de username van de gebruiker die zich wil registreren.
 	 * @return Bool - TRUE or FALSE
@@ -38,7 +46,11 @@ class profile_model extends CI_Model {
 	/**
 	 * Deze functie haalt alle gegevens op voor een bepaalde id.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 * @param int    $id  het id van een gebruiker.
 	 */
@@ -52,7 +64,11 @@ class profile_model extends CI_Model {
 	/**
 	 * Deze functie verwijderd een gebruiker uit de tabel userdata.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 * @param int    $id  het id van een gebruiker.
 	 */
@@ -61,6 +77,39 @@ class profile_model extends CI_Model {
 		$this->db->delete('userdata');
 	}
 	
+	function checkEmail($email) 
+	{
+		$this->select('uacc_id')
+		$this->db->where('uacc_email', $email);
+		$query = $this->db->get('user_accounts');
+		$controle = $query->num_rows();
+		
+		if($controle ==0) 
+		{
+			return $data;	
+		}
+		else
+		{
+			return $query;
+		} 
+	}
+
+	function checkUsername($username) 
+	{	
+		$this->select('id')
+		$this->db->where('username', $username);
+		$query = $this->db->get('userdata');
+		$controle = $query->num_rows();
+		
+		if($controle ==0) 
+		{
+			return $data;	
+		}
+		else
+		{
+			return $query;
+		}
+	}
 }
 
 ?>

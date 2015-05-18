@@ -5,7 +5,11 @@ class profile extends CI_Controller {
 	/**
 	 * Deze functie laad alle hulp klassen en models.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 */
 	function __construct(){
@@ -23,7 +27,11 @@ class profile extends CI_Controller {
 	/**
 	 * Deze functie laad de profile pagina.
 	 *
+<<<<<<< HEAD
 	 *  -
+=======
+	 * @author  Glenn Bertjens
+>>>>>>> origin/master
 	 *
 	 */
 	public function index(){

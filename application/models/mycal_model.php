@@ -1,6 +1,11 @@
 <?php 
 	class Mycal_model extends CI_Model
 	{
+    /**
+	 * 
+	 * @author  Ali Eren
+	 *
+	 */
 
 		var $conf;
 

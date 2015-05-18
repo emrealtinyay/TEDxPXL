@@ -29,7 +29,11 @@ class Fullpage extends CI_Controller {
 	 * Deze functie laad de home pagina.
 	 * !!!HET DESIGN VAN DE HELE HOMEPAGINA IS VAN HET INTERNET SOURCE : ASHLEY BOOTSTRAP!!!
 	 *
+<<<<<<< HEAD
 	 *  -, Glenn Bertjens
+=======
+	 * @author Glenn Bertjens, Ali Eren, Emre Altinyay
+>>>>>>> origin/master
 	 *
 	 */
 	public function index(){
@@ -87,7 +91,8 @@ class Fullpage extends CI_Controller {
 			if ($this->form_validation->run() == FALSE){
 				$this->load->view('contact_view');
 			}
-			else{
+			else
+            {
 				$form_data = array(
 								'name' => set_value('name'),
 								'email' => set_value('email'),
@@ -103,8 +108,5 @@ class Fullpage extends CI_Controller {
 		else{
 			redirect('/fullpage_logged_in');
 		}
-
-
-		
 	}
 }

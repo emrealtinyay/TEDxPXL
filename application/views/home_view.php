@@ -7,6 +7,7 @@
 										<ul style="height: 1000%; position: absolute; width: 100%; transition-duration: 0.6s; transform: translate3d(0px, -1000px, 0px);" class="slides">
 											
 										<li class="flex-active-slide" style="display: block;">
+<<<<<<< HEAD
 												<h1>TedX PXL</h1>
 											</li>
 											<li class="" style="display: block;">
@@ -21,6 +22,23 @@
 												<h1>Contact</h1>
 												<h2>Vragen? stuur ons gerust een bericht!</h2>
 											</li> 
+=======
+								            <h1>TEDxPXL</h1>
+                                            <h2>De website voor alle nieuws</h2>
+								        </li>
+										<li class="" style="display: block;">
+								            <h1>News</h1>
+											<h2>Kijk wie zich pas heeft aangemeld bij ons!</h2>
+								        </li>
+				                        <li class="" style="display: block;">
+								            <h1>Events</h1>
+											<h2>Kijk naar onze laatste events!</h2>
+										</li>
+										<li class="clone" style="display: block;">
+											<h1>Contact</h1>
+											<h2>Vragen? stuur ons gerust een bericht!</h2>
+								        </li> 
+>>>>>>> origin/master
 										</ul>
 									</div>
 								</div> 
