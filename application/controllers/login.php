@@ -82,12 +82,10 @@ class login extends CI_Controller {
 						echo 'gebruikersnaam en email komen niet overeen';
 					}
 				}
-				
 			}
 		} 
 		else 
 		{ 
-
 			$this->load->view('reset_password_view');
 		}
 	}
@@ -102,7 +100,7 @@ class login extends CI_Controller {
 			'smtp_pass' => 'Alieren75'
 			);
 		$this->load->library('email', $conf);
-		$email_code = md5($this->config->item('salt').$name);
+		$emailCode = md5($this->config->item('salt').$email);
 
 		$this->email->set_newline("\r\n");
 		$this->email->set_mailtype('html');
@@ -114,7 +112,7 @@ class login extends CI_Controller {
 					<meta http-equiv="Content-Type" content="text/html; charset-utf-8"/>
 					</head><body>';
 		$message .='<p>Dear '.$name.',</p>';
-		$message .='<p>We want to help you reset your password! Please <strong><a href="'.base_url().'index.php/login/reset_password_form/'.$email.'/'.$email_code.'">click here</a></strong> to reset your password.</p>';
+		$message .='<p>We want to help you reset your password! Please <strong><a href="'.base_url().'index.php/login/update_password/'.$email.'/'.$emailCode.'">click here</a></strong> to reset your password.</p>';
 		$message .='<p>Thank you!</p>';
 		$message .='<p>The Team at TedxPxl</p>';
 		$message .='</body></html>';
@@ -125,45 +123,48 @@ class login extends CI_Controller {
 			show_error($this->email->print_debugger());
 		}
 	}
-
-	public function reset_password_form($email, $email_code) 
+	public function update_changePassword($email, $emailCode) 
 	{
-		if(isset($email, $email_code)) 
+		if(isset($email, $emailCode)) 
 		{
+			$emailCheck = md5($this->config->item('salt').$email);
+
+			if($emailCheck == $emailcode) 
+			{
+				/* update changepasswoord en roep update_password op !!*/ 
+			}
+			else 
+			{
+				redirect('fullpage');
+			}
+
+		}
+	}
+	public function update_password($email, $emailCode) 
+	{		
+		if(isset($email, $emailCode)) 
+		{	
 			$email = trim($email);
 			$email_hash = sha1($email, $email_code);
 			$this->load->view('header_logged_out_view');
 			$this->load->view('update_password_view', array('email_hash' => $email_hash, 'email_code' => $email_code, 'email' => $email));
 			$this->load->view('footer_view');
-		}
-	}
-
-	public function update_password() 
-	{
-		/* tweede chek als er tussendoor iemand in de url zelf een email in tikt kan je iemand anders zijn wachtwoord wijzigen */
-		if(!isset($_POST['email'], $_POST['email_hash']) || $_POST['email_hash'] !== sha1($_POST['email'].$_POST['email_code'])) 
-		{
-			echo "nnee";
-		}
-		else 
-		{
 			$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
 			$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|xss_clean');
-
+			
 			if($this->form_validation->run() == FALSE) 
-			{
+			{	
 				echo 'velden moeten ingevuld worden';
 			} 
 			else 
 			{
 				$pas1 = $this->input->post('password');
 				$pas2 = $this->input->post('password_conf');
-
 				if($pas1 == $pas2) 
 				{
 					echo 'wachtwoord uploaded';
 				}
-				else 
+					else 
 				{
 					echo 'wachtwoorden komen niet overeen';
 				}

@@ -1,5 +1,5 @@
 <h2>Update your Password</h2>
-<div id="update_password_form">
+<div id="index.php/login/update_password_form">
 	<form action="update_password" method="POST">
 		<tr>
 			<td>Email:</td>
