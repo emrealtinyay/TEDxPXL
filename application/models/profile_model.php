@@ -79,7 +79,7 @@ class profile_model extends CI_Model {
 	
 	function checkEmail($email) 
 	{
-		$this->select('uacc_id')
+		$this->select('uacc_id');
 		$this->db->where('uacc_email', $email);
 		$query = $this->db->get('user_accounts');
 		$controle = $query->num_rows();
@@ -96,7 +96,7 @@ class profile_model extends CI_Model {
 
 	function checkUsername($username) 
 	{	
-		$this->select('id')
+		$this->select('id');
 		$this->db->where('username', $username);
 		$query = $this->db->get('userdata');
 		$controle = $query->num_rows();

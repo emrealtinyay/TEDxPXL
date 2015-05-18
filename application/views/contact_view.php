@@ -17,15 +17,11 @@
 								<div class="col-sm-4" style="float: left;">
 									<h4>Address:</h4>
 									<address>
-										PXL<br>
+										TEDxPXL<br>
 										Elfde-Liniestraat 24<br>
 										3500 Hasselt<br>
 										tel. +32 11 77 55 55<br>
-<<<<<<< HEAD
-										TEDx@pxl.be<br>
-=======
 										tedxpxl@pxl.be<br>
->>>>>>> origin/master
 									</address>
 								</div>
 								
