@@ -53,18 +53,23 @@
 		<script style="" src="<?php echo base_url();?>jquery/modernizr-2.js"></script>
 		<!-- Favicons
 		================================================== -->
- 			<link rel="shortcut icon" href="<?php echo base_url();?>images/icon.ico"><!-- favicon.ico -->
- 			<link rel="apple-touch-icon" href="<?php echo base_url();?>images/test4.png"><!-- apple-touch-icon.png -->
-			<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url();?>images/test1.png"><!-- apple-touch-icon-72x72.png -->
-			<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url();?>images/test2.png"><!-- apple-touch-icon-114x114.png  -->
- 			<link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url();?>images/test3.png"><!-- apple-touch-icon-144x144.png -->
-			<script src="<?php echo base_url();?>jquery/commonmaputilgeocodermarker.js" charset="UTF-8" type="text/javascript"></script>
-			<script src="<?php echo base_url();?>jquery/infowindow.js" charset="UTF-8" type="text/javascript"></script>
-			<script src="<?php echo base_url();?>jquery/onion.js" charset="UTF-8" type="text/javascript"></script>
-			<script src="<?php echo base_url();?>jquery/controlsstats.js" charset="UTF-8" type="text/javascript"></script>
-			<script type="text/javascript" src="<?php echo base_url();?>jquery/ga.js"></script>
-			</head>
-  			<body style="overflow: visible;" data-spy="scroll" data-target="#scrollTarget" data-offset="150">
+ 			<link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!-- globalWrapper -->
 		<div id="globalWrapper" class="localscroll">
