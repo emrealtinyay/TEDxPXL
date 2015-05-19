@@ -80,6 +80,8 @@ class login extends CI_Controller {
 					else 
 					{
 						echo 'gebruikersnaam en email komen niet overeen';
+						echo $controleUsername;
+						echo $controleEmail;
 					}
 				}
 			}
@@ -132,60 +134,75 @@ class login extends CI_Controller {
 	{
 		if(isset($email, $emailCode)) 
 		{
+			$this->load->model('profile_model');
 			$split = explode('%40', $email);
 			$code = $split[0].$split[1];
 			$emailCheck = md5($this->config->item('salt').$code);
 
 			if($emailCheck == $emailCode) 
 			{
-				$this->load->model('profile_model');
 				$id = $this->profile_model->checkEmail($split[0].'@'.$split[1]);
-				$this->update_password($split[0].'@'.$split[1]);
+				$this->profile_model->update_changePassword($id, 'j');
+				$this->load->view('header_logged_out_view');
+				$this->load->view('update_password_view', array('email' => $split[0].'@'.$split[1], 'message' => ''));
+				$this->load->view('footer_view');
 			}
+			else if($emailCode == 'update_password') 
+			{
+				if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password_conf'])) 
+				{
+					/* vul alle velden in */
+					$this->load->view('header_logged_out_view');
+					$this->load->view('update_password_view', array('email' => $split[0].'@'.$split[1], 'message' => 'alle velden invullen aub'));
+					$this->load->view('footer_view');
+				} 
+				else if($_POST['password'] != $_POST['password_conf'])
+				{
+					/* wachtwoorden komen niet overeen */
+					$this->load->view('header_logged_out_view');
+					$this->load->view('update_password_view', array('email' => $split[0].'@'.$split[1], 'message' => 'wachtwoorden komen niet overeen'));
+					$this->load->view('footer_view');
+				}
+				else 
+				{
+					$email = $this->input->post('email');
+					$password = $this->input->post('password');
+					$passwordConf = $this->input->post('password_conf');
+
+					/* xss clean maken van ingevoerde inhoud */
+					$this->security->xss_clean($email);
+					$this->security->xss_clean($password);
+					$this->security->xss_clean($passwordConf);
+
+					$id = $this->profile_model->checkEmail($email);
+					$hulp = $this->profile_model->get_changePassword($id);
+
+					if($hulp == 'j') 
+					{
+						$this->load->model('flexi_auth_model');
+						$id = $this->profile_model->checkEmail($split[0].'@'.$split[1]);
+						$data = array(
+							'uacc_password' => $password
+							);
+						$this->flexi_auth_model->update_user($id, $data);
+						$this->profile_model->update_changePassword($id, 'n');
+						$this->load->view('header_logged_out_view');
+						$this->load->view('reset_password_sent_view', array('email' => $split[0].'@'.$split[1]));
+						$this->load->view('footer_view');	
+					} 
+					else 
+					{
+						/* hacker, probeert een anders email adres zijn wachtwoord te veranderen */
+						redirect('fullpage');
+					} 
+					
+				}
+			} 
 			else 
 			{
 				redirect('fullpage');
 			}
 
-		}
-	}
-	public function update_password($email) 
-	{		
-		if(isset($email))
-		{	
-			if($this->input->post('submit')== 'Update My Password')
-			{
-				$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
-				$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|xss_clean');
-				
-				echo 'ali';
-				if($this->form_validation->run() == FALSE) 
-				{	
-					echo 'velden moeten ingevuld worden';
-				} 
-				else 
-				{
-					$pas1 = $this->input->post('password');
-					$pas2 = $this->input->post('password_conf');
-					if($pas1 == $pas2) 
-					{
-						echo 'wachtwoord uploaded';
-					}
-						else 
-					{
-						echo 'wachtwoorden komen niet overeen';
-					}
-				}
-				echo $_POST['email']; 
-				/* EMAIL CHECKEN CHANGEPASSWORD OF DIE JA IS DAN WORDT WACHTWOORD GEWIJZIGD ANDERS NIET */
-			} 
-			else 
-			{
-				$this->load->view('header_logged_out_view');
-				$this->load->view('update_password_view', array('email' => $email));
-				$this->load->view('footer_view');	
-			}
-				
 		}
 	}
 }

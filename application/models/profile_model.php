@@ -64,7 +64,7 @@ class profile_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('userdata');
 	}
-	
+
 	function checkEmail($email) 
 	{
 		$this->db->select('uacc_id');
@@ -99,16 +99,16 @@ class profile_model extends CI_Model {
 		}
 	}
 
-	function update_changePasswordToJ($id)
+	function update_changePassword($id, $changeTo)
 	{
-		$id = checkEmail($email);
-
 		if ($id != 0 ) 
 		{
+
 			$this->db->select('*');
 			$this->db->where('id', $id);
 			$query = $this->db->get('userdata');
 			$data = $query->row_array();
+
 
 			$newData = array(
 					'username' => $data['username'],
@@ -118,36 +118,21 @@ class profile_model extends CI_Model {
 					'geboortedatum' => $data['geboortedatum'],
 					'foto' => $data['foto'],
 					'id' => $data['id'],
-					'changepassword' => 'j'
+					'changepassword' => $changeTo
 					);
 			$this->db->where('id', $id);
 			$this->db->update('userdata', $newData);
 		}
 	}
 
-	function update_changePasswordToN($id)
+	function get_changePassword($id) 
 	{
-		$id = checkEmail($email);
-
 		if ($id != 0 ) 
 		{
-			$this->db->select('*');
+			$this->db->select('changepassword');
 			$this->db->where('id', $id);
 			$query = $this->db->get('userdata');
-			$data = $query->row_array();
-
-			$newData = array(
-					'username' => $data['username'],
-					'voornaam' => $data['voornaam'],
-					'naam' => $data['naam'],
-					'woonplaats' => $data['woonplaats'],
-					'geboortedatum' => $data['geboortedatum'],
-					'foto' => $data['foto'],
-					'id' => $data['id'],
-					'changepassword' => 'n'
-					);
-			$this->db->where('id', $id);
-			$this->db->update('userdata', $newData);
+			return $query->row()->changepassword;
 		}
 	}
 }
