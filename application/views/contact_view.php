@@ -26,7 +26,7 @@
 								</div>
 								
 								<div class="maps" style="float: right;">
-									<iframe src="https://mapsengine.google.com/map/embed?mid=zEoA9h5bVPRA.kI1oX3qQO_DE" width="640" height="480"></iframe>                                   
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10057.051795943707!2d5.3486440000000055!3d50.937349999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c12177528ced33%3A0x27d80a1d25c8505!2sHogeschool+PXL!5e0!3m2!1snl!2s!4v1432057323845" width="600" height="450" frameborder="0" style="border:0"></iframe>                                   
 								</div>							
 								
 								<div class="col-sm-4">
