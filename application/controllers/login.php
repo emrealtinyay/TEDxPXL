@@ -96,11 +96,16 @@ class login extends CI_Controller {
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
 			'smtp_port' => 465,
+			'charset' =>  'iso-8859-1',
 			'smtp_user' => 'alirn.93@gmail.com',
 			'smtp_pass' => 'Alieren75'
 			);
 		$this->load->library('email', $conf);
-		$emailCode = md5($this->config->item('salt').$email);
+		
+		/* dit die ik omdat @ bij url word vervangen door %40 */
+		$split = explode('@', $email);
+		$code = $split[0].$split[1];
+		$emailCode = md5($this->config->item('salt').$code);
 
 		$this->email->set_newline("\r\n");
 		$this->email->set_mailtype('html');
@@ -112,7 +117,7 @@ class login extends CI_Controller {
 					<meta http-equiv="Content-Type" content="text/html; charset-utf-8"/>
 					</head><body>';
 		$message .='<p>Dear '.$name.',</p>';
-		$message .='<p>We want to help you reset your password! Please <strong><a href="'.base_url().'index.php/login/update_password/'.$email.'/'.$emailCode.'">click here</a></strong> to reset your password.</p>';
+		$message .='<p>We want to help you reset your password! Please <strong><a href="'.base_url().'index.php/login/update_changePassword/'.$email.'/'.$emailCode.'">click here</a></strong> to reset your password.</p>';
 		$message .='<p>Thank you!</p>';
 		$message .='<p>The Team at TedxPxl</p>';
 		$message .='</body></html>';
@@ -127,11 +132,15 @@ class login extends CI_Controller {
 	{
 		if(isset($email, $emailCode)) 
 		{
-			$emailCheck = md5($this->config->item('salt').$email);
+			$split = explode('%40', $email);
+			$code = $split[0].$split[1];
+			$emailCheck = md5($this->config->item('salt').$code);
 
-			if($emailCheck == $emailcode) 
+			if($emailCheck == $emailCode) 
 			{
-				/* update changepasswoord en roep update_password op !!*/ 
+				$this->load->model('profile_model');
+				$id = $this->profile_model->checkEmail($split[0].'@'.$split[1]);
+				$this->update_password($split[0].'@'.$split[1]);
 			}
 			else 
 			{
@@ -140,35 +149,43 @@ class login extends CI_Controller {
 
 		}
 	}
-	public function update_password($email, $emailCode) 
+	public function update_password($email) 
 	{		
-		if(isset($email, $emailCode)) 
+		if(isset($email))
 		{	
-			$email = trim($email);
-			$email_hash = sha1($email, $email_code);
-			$this->load->view('header_logged_out_view');
-			$this->load->view('update_password_view', array('email_hash' => $email_hash, 'email_code' => $email_code, 'email' => $email));
-			$this->load->view('footer_view');
-			$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
-			$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|xss_clean');
-			
-			if($this->form_validation->run() == FALSE) 
-			{	
-				echo 'velden moeten ingevuld worden';
+			if($this->input->post('submit')== 'Update My Password')
+			{
+				$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+				$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'required|xss_clean');
+				
+				echo 'ali';
+				if($this->form_validation->run() == FALSE) 
+				{	
+					echo 'velden moeten ingevuld worden';
+				} 
+				else 
+				{
+					$pas1 = $this->input->post('password');
+					$pas2 = $this->input->post('password_conf');
+					if($pas1 == $pas2) 
+					{
+						echo 'wachtwoord uploaded';
+					}
+						else 
+					{
+						echo 'wachtwoorden komen niet overeen';
+					}
+				}
+				echo $_POST['email']; 
+				/* EMAIL CHECKEN CHANGEPASSWORD OF DIE JA IS DAN WORDT WACHTWOORD GEWIJZIGD ANDERS NIET */
 			} 
 			else 
 			{
-				$pas1 = $this->input->post('password');
-				$pas2 = $this->input->post('password_conf');
-				if($pas1 == $pas2) 
-				{
-					echo 'wachtwoord uploaded';
-				}
-					else 
-				{
-					echo 'wachtwoorden komen niet overeen';
-				}
+				$this->load->view('header_logged_out_view');
+				$this->load->view('update_password_view', array('email' => $email));
+				$this->load->view('footer_view');	
 			}
+				
 		}
 	}
 }

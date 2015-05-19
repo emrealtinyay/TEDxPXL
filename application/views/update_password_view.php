@@ -1,12 +1,10 @@
 <h2>Update your Password</h2>
-<div id="index.php/login/update_password_form">
+<div id="update_password_form">
 	<form action="update_password" method="POST">
 		<tr>
 			<td>Email:</td>
 			<td>
 				<span class="input-group">
-					<input type="hidden" name="email_hash" class="form-control" value="<?php echo $email_hash;?>"/>
-					<input type="hidden" name="email_code" class="form-control" value="<?php echo $email_code;?>"/>
 					<input type="email" name="email" class="form-control" value="<?php echo $email;?>"/>
 				</span>
 			</td>
