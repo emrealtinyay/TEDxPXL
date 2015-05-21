@@ -22,7 +22,6 @@
 												<h1>Contact</h1>
 												<h2>Vragen? stuur ons gerust een bericht!</h2>
 											</li> 
-=======
 								            <h1>TEDxPXL</h1>
                                             <h2>De website voor alle nieuws</h2>
 								        </li>
@@ -38,7 +37,7 @@
 											<h1>Contact</h1>
 											<h2>Vragen? stuur ons gerust een bericht!</h2>
 								        </li> 
->>>>>>> origin/master
+
 										</ul>
 									</div>
 								</div> 
