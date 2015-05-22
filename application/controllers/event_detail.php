@@ -33,26 +33,47 @@ class Event_detail extends CI_Controller {
 	 */
 	public function index() 
 	{
-		$data=  $this->input->post('datum');
+		/* Gegevens van datum worden opgehaald en in een variabel gestopt */
+		$data = $this->input->post('datum');
+
+		/* event functie wordt opgeroepen */
 		$this->event(10);
 	}
 
  	public function event($id){	
- 		if($this->flexi_auth->is_logged_in() == true){
- 			$data3 = array( 'data' => $this->flexi_auth->get_user_by_id_row());
- 			$data_foto['foto'] = $this->profile_model->haalGegevensOp($data3['data']->uacc_username);
- 			$data_totaal = array( 	'user_data' => $data3,
+
+ 		/* controle op login */
+ 		if($this->flexi_auth->is_logged_in() == true)
+ 		{
+
+ 			/* Gegevens van ingelogde user ophalen */
+ 			$data = array( 'data' => $this->flexi_auth->get_user_by_id_row());
+
+ 			/* haalt de foto van de user op */
+ 			$data_foto['foto'] = $this->profile_model->haalGegevensOp($data['data']->uacc_username);
+
+ 			/* gegevens en de foto worden in een array gestopt */
+ 			$data_totaal = array( 	'user_data' => $data,
  									'foto' => $data_foto);	
+
+ 			/* gegevens van gevraagde event wordt opgehaald */
  			$data['data'] = $this->events_model->haalEventOp($id);
- 			var_dump($data);
+
+ 			//var_dump($data);
+
+ 			/* header word geladen */
  			$this->load->view('header_logged_in_other_view', $data_totaal);
+
+ 			/* event detail view word gelanden */
 			$this->load->view('event_detail_view',$data);
+
+			/* footer wordt gelanden */
 			$this->load->view('footer_view');
- 		}else{
- 			$data['data'] = $this->events_model->haalEventOp($id);
- 			$this->load->view('header_logged_out_other_view');
- 			$this->load->view('event_detail_view',$data);
- 			$this->load->view('footer_view');
+ 		}
+ 		else
+ 		{
+ 			/* als je niet ingelogd bent kan je event details niet opvragen */
+ 			redirect('fullpage');
  		}
  	} 
 }

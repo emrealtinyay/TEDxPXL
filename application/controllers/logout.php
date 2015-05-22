@@ -26,7 +26,8 @@ class logout extends CI_Controller {
 	 *
 	 */
 	public function index(){		
-		if($this->flexi_auth->is_logged_in() == true){
+		if($this->flexi_auth->is_logged_in() == true)
+		{
 			$this->flexi_auth->logout(false);
 			redirect('/fullpage');
 		}	

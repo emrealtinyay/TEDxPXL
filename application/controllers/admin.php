@@ -32,6 +32,8 @@ class admin extends CI_Controller {
 	 *
 	 */
 	public function index(){
+		
+		/* Validatie regels */
 		$this->form_validation->set_rules('naam', 'Naam', 'trim|xss_clean');
 		$this->form_validation->set_rules('locatie', 'Locatie', 'trim|xss_clean');
 		$this->form_validation->set_rules('adres', 'Adres', 'trim|xss_clean');
@@ -39,46 +41,91 @@ class admin extends CI_Controller {
 		$this->form_validation->set_rules('datum', 'Datum', 'trim|xss_clean');
 		$this->form_validation->set_rules('maand', 'Maand', 'trim|xss_clean');
 		$this->form_validation->set_rules('info', 'Info', 'trim|xss_clean');
+
+		/* Haalt contact gegevens op */
 		$data2['contact'] = $this->contact_model->HaalContactGegevensOp();
-		if($this->flexi_auth->is_logged_in() == true){
+
+		/* Controle is ingelogd ? */
+		if($this->flexi_auth->is_logged_in() == true)
+		{
+			/* Gegevens van ingelogde user ophalen */
 			$user = array( 'userinfo' => $this->flexi_auth->get_user_by_id_row());
-			if($group = $user['userinfo']->uacc_group_fk == 2){
-				$data3 = array( 'data' => $this->flexi_auth->get_user_by_id_row());
-				$data_foto['foto'] = $this->profile_model->haalGegevensOp($data3['data']->uacc_username);
-				$data_totaal = array( 	'user_data' => $data3,
+			
+			/* Controle of het admin is of niet */
+			if($group = $user['userinfo']->uacc_group_fk == 2)
+			{
+				/* haalt de foto van de user op */
+				$data_foto['foto'] = $this->profile_model->haalGegevensOp($user['userinfo']->uacc_username);
+
+				/* gegevens en de foto worden in een array gestopt */
+				$data_totaal = array( 	'user_data' => $user,
 										'foto' => $data_foto);
+
+				/* Header word geladen */
 				$this->load->view('header_logged_in_other_view',$data_totaal);
+
+				/* admin view word geladen met contact gegevens */
 				$this->load->view('admin_view',$data2);
-				if($this->input->post('submit') == 'Maak Event'){
-					if ($this->form_validation->run() == FALSE){
+
+				/* bij klikken op Maak event */
+				if($this->input->post('submit') == 'Maak Event')
+				{
+					/* controle op validatie */
+					if ($this->form_validation->run() == FALSE)
+					{
 						redirect('fullpage');
-					}else{
+					}
+					else
+					{
+						/* ingevoerde gegevens worden in een array gestopt */
 						$data = array (
-						'naam' => $this->input->post('naam') ,
-						'locatie' => $this->input->post('locatie') ,
-						'adres' => $this->input->post('adres'),
-						'tijd' => $this->input->post('tijd') ,
-						'datum' => $this->input->post('datum') ,
-						'maand' => $this->input->post('maand') ,
-						'info' => $this->input->post('info')
-						);
+							'naam' => $this->input->post('naam') ,
+							'locatie' => $this->input->post('locatie') ,
+							'adres' => $this->input->post('adres'),
+							'tijd' => $this->input->post('tijd') ,
+							'datum' => $this->input->post('datum') ,
+							'maand' => $this->input->post('maand') ,
+							'info' => $this->input->post('info')
+							);
+
+						/* gegevens worden in events tabel toegevoegd */
 						$this->events_model->voegEventToe($data);
+
+						/* admin pagina wordt opnieuw geladen */
 						redirect('admin');
 					}
 				}
-				if($this->input->post('submit1') == 'Delete User'){
+
+				/* bij klikken op Delete User */
+				if($this->input->post('submit1') == 'Delete User')
+				{
+					/* User wordt verwijderd van user_account tabel */
 					$this->flexi_auth->delete_user($this->input->post('ID'));
+
+					/* User wordt verwijderd van userdata tabel */
 					$this->profile_model->DeleteUser($this->input->post('ID'));	
 				}
-				if($this->input->post('submit2') == 'Delete Contact'){
+
+				/* bij klikken op Delete Contact */
+				if($this->input->post('submit2') == 'Delete Contact')
+				{
+					/* Contact wordt verwijderd van contact_table tabel */
 					$this->contact_model->DeleteContact($this->input->post('ID'));		
 				}
-			}else{
+			}
+			else
+			{
+				/* als het geen admin is wordt fullpage geladen */
 				redirect('fullpage');
 			}
-		}else{
-			redirect('/fullpage');
 		}
+		else
+		{
+			/* als je niet ingelogd bent wordt fullpage geladen */
+			redirect('fullpage');
+		}
+
+		/* footer view wordt geladen */
 		$this->load->view('footer_view');	
 	}	
 }

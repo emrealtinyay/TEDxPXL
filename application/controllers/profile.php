@@ -29,15 +29,27 @@ class profile extends CI_Controller {
 	 *
 	 */
 	public function index(){
-		if($this->flexi_auth->is_logged_in() == true){
-			$data3 = array( 'data' => $this->flexi_auth->get_user_by_id_row());
-			$data_foto['foto'] = $this->profile_model->haalGegevensOp($data3['data']->uacc_username);
-			$data_totaal = array( 	'user_data' => $data3,
+		/* controle op login */
+		if($this->flexi_auth->is_logged_in() == true)
+		{
+			/* gegevens van ingelogd user opvragen */
+			$data = array( 'data' => $this->flexi_auth->get_user_by_id_row());
+
+			/* foto van ingelogde user opvragen */
+			$data_foto['foto'] = $this->profile_model->haalGegevensOp($data['data']->uacc_username);
+
+			/* alle gegevens in een array stoppen */
+			$data_totaal = array( 	'user_data' => $data,
 									'foto' => $data_foto
 			);
-			$user = array( 'userinfo' => $this->flexi_auth->get_user_by_id_row());
-			$id = $user['userinfo']->uacc_username;
+
+			/* id opvragen */
+			$id = $data['data']->uacc_username;
+
+			/* profiel gegevens ophalen van ingelogde user */
 			$data = array('profileInfo' => $this->profile_model->haalGegevensOp($id));
+
+			/* views laden */
 			$this->load->view('header_logged_in_other_view', $data_totaal);
 			$this->load->view('profile_view',$data);
 			$this->load->view('footer_view');
