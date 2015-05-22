@@ -68,6 +68,24 @@
 										</tr>		 
 									</tr>
 								</form>
+								<form action="event_detail" method="POST">
+									<tr>
+										<td>Datum:</td>
+										<td>
+											<span class="input-group">
+												<input type="text" id='datum' placeholder="DD/MM/JJJJ" class="form-control" name="datum"/><br/>
+											</span>
+										</td>
+										<tr>
+											<td>
+												<input type="submit" name="submit" id="submit" value="Ga naar Event Detail" />
+											</td>
+											<td>
+												<input type="submit" name="submit" id="submit" value="Verwijder Event" />
+											</td>
+										</tr>
+									</tr>
+								</form>		
 								<?php echo $calendar; ?>
 							</nav>
 						</div>

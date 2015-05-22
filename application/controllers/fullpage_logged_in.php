@@ -94,10 +94,34 @@ class Fullpage_logged_in extends CI_Controller {
 			$this->form_validation->set_rules('maand', 'Maand', 'trim|xss_clean|required');
 			$this->form_validation->set_rules('info', 'Info', 'trim|xss_clean|required');
 
+			/* Event toevoegen */
 			if($this->input->post('submit') == 'Maak Event'){
 				if ($this->form_validation->run() == FALSE){
-					//redirect('fullpage');
-					echo $data['data']->uacc_username;
+					redirect('fullpage');
+				}
+				else
+				{
+					/* Bij events voeg een kolom toe met user id !! */
+					/* echo $data['data']->uacc_username; */
+					$data = array (
+					'naam' => $this->input->post('naam') ,
+					'locatie' => $this->input->post('locatie') ,
+					'adres' => $this->input->post('adres'),
+					'tijd' => $this->input->post('tijd') ,
+					'datum' => $this->input->post('datum') ,
+					'maand' => $this->input->post('maand') ,
+					'info' => $this->input->post('info')
+					);
+					$this->events_model->voegEventToe($data);
+					redirect('fullpage');
+					
+				}
+			}
+
+			/* Event verwijderen */
+			if($this->input->post('submit') == 'Delete Event'){
+				if ($this->form_validation->run() == FALSE){
+					redirect('fullpage');
 				}
 				else
 				{
@@ -115,6 +139,21 @@ class Fullpage_logged_in extends CI_Controller {
 					//redirect('fullpage');
 					
 				}
+			}
+
+			/* Event detail */
+			if($this->input->post('submit') == 'Ga naar Event Detail'){
+			 /*	if ($this->form_validation->run() == FALSE){
+					//	redirect('fullpage');
+				}
+				else
+				{
+					echo "ali";
+					$this->event_detail->event(10);
+				} 
+				*/
+				$this->event();	
+				
 			}
 
 			$this->load->view('team_view');
@@ -142,6 +181,11 @@ class Fullpage_logged_in extends CI_Controller {
 			}
 		$this->load->view('footer_view');
 		}
+	}
+
+	function event() 
+	{
+		redirect('event_detail');
 	}
 }
 

@@ -43,7 +43,7 @@ class events_model extends CI_Model {
 	function haalEventOp($id){
 		$this->db->where('id', $id);
 		$query = $this->db->get('events');
-		$data = $query->result_array();
+		$data = $query->row_array();
 		return $data;
 	}
 	

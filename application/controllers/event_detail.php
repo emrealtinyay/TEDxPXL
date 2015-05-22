@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class event_detail extends CI_Controller {
+class Event_detail extends CI_Controller {
 	
 	/**
 	 * Deze functie laad alle hulp klassen en models.
@@ -31,6 +31,12 @@ class event_detail extends CI_Controller {
 	 * 
 	 *@param int	$id		een id van een event
 	 */
+	public function index() 
+	{
+		$data=  $this->input->post('datum');
+		$this->event(10);
+	}
+
  	public function event($id){	
  		if($this->flexi_auth->is_logged_in() == true){
  			$data3 = array( 'data' => $this->flexi_auth->get_user_by_id_row());
@@ -38,6 +44,7 @@ class event_detail extends CI_Controller {
  			$data_totaal = array( 	'user_data' => $data3,
  									'foto' => $data_foto);	
  			$data['data'] = $this->events_model->haalEventOp($id);
+ 			var_dump($data);
  			$this->load->view('header_logged_in_other_view', $data_totaal);
 			$this->load->view('event_detail_view',$data);
 			$this->load->view('footer_view');

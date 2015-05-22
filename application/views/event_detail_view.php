@@ -7,27 +7,27 @@
 								<?php
 								echo '<h4>Naam: </h4>';
 								echo '<h6>';
-								echo ($data[0]['naam']);
+								echo ($data['naam']);
 								echo '</h6>';
 								echo '<h4>Locatie: </h4>';
 								echo '<h6>';
-								echo ($data[0]['locatie']);
+								echo ($data['locatie']);
 								echo '</h6>';
 								echo '<h4>Adres: </h4>';
 								echo '<h6>';
-								echo ($data[0]['adres']);
+								echo ($data['adres']);
 								echo '</h6>';
 								echo '<h4>Tijdstip: </h4>';
 								echo '<h6>';
-								echo ($data[0]['tijd']);
+								echo ($data['tijd']);
 								echo '</h6>';
 								echo '<h4>Datum: </h4>';
 								echo '<h6>';
-								echo ($data[0]['datum']);
+								echo ($data['datum']);
 								echo '</h6>';
 								echo '<h4>Info: </h4>';
 								echo '<h6>';
-								echo ($data[0]['info']);
+								echo ($data['info']);
 								echo '</h6>';								
 								?>									
 							</div>
