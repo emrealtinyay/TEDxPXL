@@ -50,15 +50,7 @@ class Fullpage extends CI_Controller {
 		}
 
 		$this->load->model('mycal_model');
-		
-	/*	if($day = $this->input->post('day')) 
-		{
-			$this->mycal_model->add_calendar_data(
-				"$year-$month-$day",
-				$this->input->post('data')
-			);
-		}
-	*/
+
 		$data['calendar'] = $this->mycal_model->generate($year, $month);
 
 		if($this->flexi_auth->is_logged_in() == false){

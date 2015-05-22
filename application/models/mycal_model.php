@@ -59,40 +59,17 @@
 			';
 		}
 
-		function add_calendar_data($date, $data) 
-		{
-			/* controlleren of iets als bestaat want datum is primary key*/
-			if($this->db->select('date')->from('calendar')->where('date', $date)->count_all_results())
-			{
-				$this->db->where('date',$date)->update('calendar', array(
-					'date' => $date,
-					'data' => $data
-					)
-				);
-			} else
-			{
-				$this->db->insert('calendar', array(
-					'date' => $date,
-					'data' => $data
-			   		)
-				);
-			}
-
-			
-		}
-
 		function get_calendar_data($year, $month) 
 		{
-																									/* after betekent dat % teken er achter komt (2010-02%) */
-			$query = $this->db->select('date, data')->from('calendar')->get();
+			$query = $this->db->select('naam, datum')->from('events')->get();
 			$cal_data = array();
 			foreach ($query->result() as $row) {
 				/* we nemen een substring omdat we de dag als parameter willen doorgeven bij array*/
-				$controleJaar = (int)substr($row->date, 0,4);
-				$controleMaand = (int)substr($row->date, 5,2);
+				$controleMaand = (int)substr($row->datum, 3,2);
+				$controleJaar = (int)substr($row->datum, 6,4);
 				if($controleJaar == $year && $controleMaand == $month) 
 				{
-					$cal_data[(int)substr($row->date, 8,2)] = $row->data;	
+					$cal_data[(int)substr($row->datum, 0,2)] = $row->naam;
 				}
 				
 			}

@@ -47,7 +47,7 @@ class Fullpage_logged_in extends CI_Controller {
 			$month = date('m');
 		}
 
-		$this->load->model('mycal_logged_in_model');
+		$this->load->model('mycal_model');
 		
 		if($day = $this->input->post('day')) 
 		{
@@ -57,7 +57,7 @@ class Fullpage_logged_in extends CI_Controller {
 			);
 		}
 
-		$data1['calendar'] = $this->mycal_logged_in_model->generate($year, $month);
+		$data1['calendar'] = $this->mycal_model->generate($year, $month);
 
 		if($this->flexi_auth->is_logged_in() == true){
 			$data = array( 'data' => $this->flexi_auth->get_user_by_id_row());
@@ -79,9 +79,47 @@ class Fullpage_logged_in extends CI_Controller {
             	'data' => $data3
         	);	
 			$this->load->view('news_view', $data_leden);
+
 			$this->load->view('about_view');
-			$this->load->view('events_view',$data1);
+
+			/* Events pagina */
+			$this->load->view('events_logged_in_view',$data1);
+
+
+			$this->form_validation->set_rules('naam', 'Naam', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('locatie', 'Locatie', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('adres', 'Adres', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('tijd', 'Tijd', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('datum', 'Datum', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('maand', 'Maand', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('info', 'Info', 'trim|xss_clean|required');
+
+			if($this->input->post('submit') == 'Maak Event'){
+				if ($this->form_validation->run() == FALSE){
+					//redirect('fullpage');
+					echo $data['data']->uacc_username;
+				}
+				else
+				{
+					/* Bij events voeg een kolom toe met user id !! */
+					$data = array (
+					'naam' => $this->input->post('naam') ,
+					'locatie' => $this->input->post('locatie') ,
+					'adres' => $this->input->post('adres'),
+					'tijd' => $this->input->post('tijd') ,
+					'datum' => $this->input->post('datum') ,
+					'maand' => $this->input->post('maand') ,
+					'info' => $this->input->post('info')
+					);
+					$this->events_model->voegEventToe($data);
+					//redirect('fullpage');
+					
+				}
+			}
+
 			$this->load->view('team_view');
+
+			/* Contact pagina */
 			$this->form_validation->set_rules('name', 'Name', 'required|xss_clean|max_length[50]');			
 			$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');			
 			$this->form_validation->set_rules('phone', 'Phone', 'required|is_numeric|max_length[50]');			
