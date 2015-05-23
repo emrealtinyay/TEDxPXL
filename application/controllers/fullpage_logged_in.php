@@ -42,7 +42,8 @@ class Fullpage_logged_in extends CI_Controller {
 		$this->display($year, $month);
 	}
 
-	public function display($year= null, $month = null){
+	public function display($year= null, $month = null)
+	{
 		/* Als jaar niet bestaat krijgt die automatisch het huidig jaar */
 		if(!$year) 
 		{
@@ -144,26 +145,20 @@ class Fullpage_logged_in extends CI_Controller {
 			}
 
 			/* bij klikken op Delete event */
-			if($this->input->post('submit') == 'Delete Event')
+			if($this->input->post('submit') == 'Event Verwijderen')
 			{
 				/* controle op validatie */
 				if ($this->form_validation->run() == FALSE)
 				{
-					redirect('fullpage');
+					//redirect('fullpage');
+					echo "ja";
 				}
 				else
 				{
 					/* Bij events voeg een kolom toe met user id !! */
-					$data = array (
-					'naam' => $this->input->post('naam') ,
-					'locatie' => $this->input->post('locatie') ,
-					'adres' => $this->input->post('adres'),
-					'tijd' => $this->input->post('tijd') ,
-					'datum' => $this->input->post('datum') ,
-					'maand' => $this->input->post('maand') ,
-					'info' => $this->input->post('info')
-					);
-					$this->events_model->voegEventToe($data);
+					$datum = $this->input->post('datum');
+					$a = $this->events_model->verwijderEvent($datum);
+					echo $a;
 					//redirect('fullpage');
 					
 				}
@@ -204,6 +199,14 @@ class Fullpage_logged_in extends CI_Controller {
 			}	
 		$this->load->view('footer_view');
 		}
+	}
+
+	public function delete()
+	{
+		$datum = $this->input->post('datum');
+		$a = $this->events_model->verwijderEvent($datum);
+
+		redirect('Fullpage_logged_in');
 	}
 }
 

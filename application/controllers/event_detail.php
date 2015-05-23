@@ -39,14 +39,6 @@ class Event_detail extends CI_Controller {
 		/* gegevens van gevraagde event wordt opgehaald */
  		$data = $this->events_model->haalEventOpDatum($datum);
 
- 
-
-		/* event functie wordt opgeroepen */
-		$this->event($data);
-	}
-
- 	public function event($data){	
-
  		/* controle op login */
  		if($this->flexi_auth->is_logged_in() == true)
  		{
@@ -60,18 +52,15 @@ class Event_detail extends CI_Controller {
  			/* gegevens en de foto worden in een array gestopt */
  			$data_totaal = array( 	'user_data' => $data1,
  									'foto' => $data_foto);	
-
- 			var_dump($data);
- 			$ja = array( 'user' => 'ja');
  		
  			/* header word geladen */
- 		//	$this->load->view('header_logged_in_other_view', $data_totaal);
+ 			$this->load->view('header_logged_in_other_view', $data_totaal);
 
  			/* event detail view word gelanden */
-			$this->load->view('event_detail_view',$ja);
+			$this->load->view('event_detail_view',$data);
 
 			/* footer wordt gelanden */
-		//	$this->load->view('footer_view');
+			$this->load->view('footer_view');
 
  		}
  		else
@@ -79,5 +68,5 @@ class Event_detail extends CI_Controller {
  			/* als je niet ingelogd bent kan je event details niet opvragen */
  			redirect('fullpage');
  		}
- 	} 
+	}
 }

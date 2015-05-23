@@ -7,7 +7,7 @@
 						</div>
 					</div>
 				</div>
-				<section class="slice" id="team">
+				<section class="slice" id="works">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
@@ -97,7 +97,7 @@
 							<br/><br/><br/>
 							<div> 
 								<article>
-									<form action="event_detail" method="POST">
+									<form action="fullpage_logged_in/delete" method="POST">
 										<tr>
 											<td>Event verwijderen :</td><br/>
 											<td>------------------</td><br/>

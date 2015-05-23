@@ -26,7 +26,8 @@ class events_model extends CI_Model {
 	 * @author  Glenn Bertjens, Ali Eren, Emre Altinyay
 	 *
 	 */
-	function haalEventsOp(){
+	function haalEventsOp()
+	{
 		$query = $this->db->get('events');
 		 $data = $query->result_array();
 		return $data; 
@@ -40,12 +41,14 @@ class events_model extends CI_Model {
 	 *
 	 * @param int   $id  Het id van het event.
 	 */
-	function haalEventOp($id){
+	function haalEventOp($id)
+	{
 		$this->db->where('id', $id);
 		$query = $this->db->get('events');
 		$data = $query->row_array();
 		return $data;
 	}
+
 	function haalEventOpDatum($datum)
 	{
 		$query = $this->db->select('*')->from('events')->where('datum', $datum)->get();
@@ -53,6 +56,12 @@ class events_model extends CI_Model {
 		return $data;		
 	}
 
+	function verwijderEvent($datum) 
+	{
+		$this->db->where('datum', $datum);
+		$this->db->delete('events');
+		return $this->db->affected_rows();
+	}
 	/**
 	 * Deze functie voegt een waarde toe in die kolom foto 
 	 * voor een specifiek event in de tabel events.
