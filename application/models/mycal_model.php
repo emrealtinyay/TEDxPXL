@@ -65,13 +65,12 @@
 			$cal_data = array();
 			foreach ($query->result() as $row) {
 				/* we nemen een substring omdat we de dag als parameter willen doorgeven bij array*/
-				$controleMaand = (int)substr($row->datum, 3,2);
-				$controleJaar = (int)substr($row->datum, 6,4);
+				$controleMaand = (int)substr($row->datum, 5,2);
+				$controleJaar = (int)substr($row->datum, 0,4);
 				if($controleJaar == $year && $controleMaand == $month) 
 				{
-					$cal_data[(int)substr($row->datum, 0,2)] = $row->naam;
+					$cal_data[(int)substr($row->datum, 8,2)] = $row->naam;
 				}
-				
 			}
 			return $cal_data;
 		} 

@@ -46,7 +46,13 @@ class events_model extends CI_Model {
 		$data = $query->row_array();
 		return $data;
 	}
-	
+	function haalEventOpDatum($datum)
+	{
+		$query = $this->db->select('*')->from('events')->where('datum', $datum)->get();
+		$data = $query->row_array();
+		return $data;		
+	}
+
 	/**
 	 * Deze functie voegt een waarde toe in die kolom foto 
 	 * voor een specifiek event in de tabel events.

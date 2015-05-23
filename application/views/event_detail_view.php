@@ -7,7 +7,7 @@
 								<?php
 								echo '<h4>Naam: </h4>';
 								echo '<h6>';
-								echo ($data['naam']);
+								echo $ja['user'];
 								echo '</h6>';
 								echo '<h4>Locatie: </h4>';
 								echo '<h6>';

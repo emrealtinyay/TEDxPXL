@@ -14,7 +14,8 @@ class profile_model extends CI_Model {
 	function UpdateGegevens($data, $id){
 		$this->db->where('username', $id);
 		$this->db->update('userdata', $data);
-		if ($this->db->affected_rows() == '1'){
+		if ($this->db->affected_rows() == '1')
+		{
 			return TRUE;
 		}
 		return FALSE;
@@ -31,7 +32,8 @@ class profile_model extends CI_Model {
 	 */
 	function VoegGebruikerToe($data){	
 		$this->db->insert('userdata', $data);	
-		if ($this->db->affected_rows() == '1'){
+		if ($this->db->affected_rows() == '1')
+		{
 			return TRUE;
 		}
 		return FALSE;
