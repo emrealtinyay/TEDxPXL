@@ -49,20 +49,22 @@ class admin extends CI_Controller {
 		if($this->flexi_auth->is_logged_in() == true)
 		{
 			/* Gegevens van ingelogde user ophalen */
-			$user = array( 'userinfo' => $this->flexi_auth->get_user_by_id_row());
+			$data = array( 'data' => $this->flexi_auth->get_user_by_id_row());
 			
 			/* Controle of het admin is of niet */
-			if($group = $user['userinfo']->uacc_group_fk == 2)
+			if($group = $data['data']->uacc_group_fk == 2)
 			{
 				/* haalt de foto van de user op */
-				$data_foto['foto'] = $this->profile_model->haalGegevensOp($user['userinfo']->uacc_username);
+				$data_foto['foto'] = $this->profile_model->haalGegevensOp($data['data']->uacc_username);
 
 				/* gegevens en de foto worden in een array gestopt */
-				$data_totaal = array( 	'user_data' => $user,
-										'foto' => $data_foto);
+				$data_totaal = array( 	
+					'user_data' => $data,
+					'foto' => $data_foto
+					);	
 
 				/* Header word geladen */
-				$this->load->view('header_logged_in_other_view',$data_totaal);
+				$this->load->view('admin/header_logged_in_other_view',$data_totaal);
 
 				/* admin view word geladen met contact gegevens */
 				$this->load->view('admin_view',$data2);
@@ -70,30 +72,7 @@ class admin extends CI_Controller {
 				/* bij klikken op Maak event */
 				if($this->input->post('submit') == 'Maak Event')
 				{
-					/* controle op validatie */
-					if ($this->form_validation->run() == FALSE)
-					{
-						redirect('fullpage');
-					}
-					else
-					{
-						/* ingevoerde gegevens worden in een array gestopt */
-						$data = array (
-							'naam' => $this->input->post('naam') ,
-							'locatie' => $this->input->post('locatie') ,
-							'adres' => $this->input->post('adres'),
-							'tijd' => $this->input->post('tijd') ,
-							'datum' => $this->input->post('datum') ,
-							'maand' => $this->input->post('maand') ,
-							'info' => $this->input->post('info')
-							);
-
-						/* gegevens worden in events tabel toegevoegd */
-						$this->events_model->voegEventToe($data);
-
-						/* admin pagina wordt opnieuw geladen */
-						redirect('admin');
-					}
+					$this->maakEvent($data['data']->uacc_username);
 				}
 
 				/* bij klikken op Delete User */
@@ -104,6 +83,8 @@ class admin extends CI_Controller {
 
 					/* User wordt verwijderd van userdata tabel */
 					$this->profile_model->DeleteUser($this->input->post('ID'));	
+
+					redirect('admin');
 				}
 
 				/* bij klikken op Delete Contact */
@@ -111,6 +92,8 @@ class admin extends CI_Controller {
 				{
 					/* Contact wordt verwijderd van contact_table tabel */
 					$this->contact_model->DeleteContact($this->input->post('ID'));		
+
+					redirect('admin');
 				}
 			}
 			else
@@ -127,5 +110,47 @@ class admin extends CI_Controller {
 
 		/* footer view wordt geladen */
 		$this->load->view('footer_view');	
+	}
+
+	public function maakEvent($username) 
+	{
+		/* Validatie regels */
+		$this->form_validation->set_rules('naam', 'Naam', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('locatie', 'Locatie', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('adres', 'Adres', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('tijd', 'Tijd', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('datum', 'Datum', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('maand', 'Maand', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('info', 'Info', 'trim|xss_clean|required');
+		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');	
+
+		$userId = $this->profile_model->checkUsername($username);
+
+		/* controle op validatie */
+		if ($this->form_validation->run() == FALSE)
+		{
+			redirect('admin');
+		}
+		else
+		{
+			/* Bij events voeg een kolom toe met user id !! */
+			/* echo $data['data']->uacc_username; */
+			/* ingevoerde gegevens worden in een array gestopt */
+			$data = array (
+				'naam' => $this->input->post('naam') ,
+				'locatie' => $this->input->post('locatie') ,
+				'adres' => $this->input->post('adres'),
+				'tijd' => $this->input->post('tijd') ,
+				'datum' => $this->input->post('datum') ,
+				'maand' => $this->input->post('maand') ,
+				'info' => $this->input->post('info'),
+				'user_id' => $userId
+				);
+
+			/* gegevens worden in events tabel toegevoegd */
+			$this->events_model->voegEventToe($data);
+			redirect('fullpage_logged_in');
+					
+		}
 	}	
 }

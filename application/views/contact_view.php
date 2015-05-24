@@ -30,8 +30,9 @@
 								</div>							
 								
 								<div class="col-sm-4">
-									<?php
-									echo form_open('fullpage'); ?>
+									<form action="" method= "Post"> 
+								<!--	<?php
+									 form_open(current_url()); ?> -->
 									<div class="form-group">
 											<label for="name">Name<span class="required">*</span></label>
 											<?php echo form_error('name'); ?>
@@ -63,10 +64,10 @@
 									<div class="form-group">
 										<input type="submit" class="btn btn-lg" name="submit" id="submit" value="Submit" />
 									</div>
-									
+									</form>
 								
 								
-									<?php echo form_close(); ?>
+									<!--<?php  form_close(); ?>-->
 								</div>
 
 										

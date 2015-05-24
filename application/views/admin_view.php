@@ -7,7 +7,7 @@ naam : <input type="text" id='naam' placeholder="Naam" class="form-control" name
 locatie : <input type="text" id='locatie' placeholder="Locatie" class="form-control" name="locatie"/><br/>
 adres : <input type="text" id='adres' placeholder="Adres" class="form-control" name="adres"/><br/>
 tijd : <input type="text" id='tijd' placeholder="Tijd" class="form-control" name="tijd"/><br/>
-datum : <input type="text" id='datum' placeholder="Datum" class="form-control" name="datum"/><br/>
+datum : <input type="date" id='datum' placeholder="Datum" class="form-control" name="datum"/><br/>
 maand (in het engels! en eerste letter een hoofdletter!) : <input type="text" id='maand' placeholder="Maand" class="form-control" name="maand"/><br/>
 info : <input type="text" id='info' placeholder="Info" class="form-control" name="info"/><br/>
 <input type="submit" name="submit" id="submit" value="Maak Event" />

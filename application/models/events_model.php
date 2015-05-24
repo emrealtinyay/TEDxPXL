@@ -60,7 +60,10 @@ class events_model extends CI_Model {
 	{
 		$this->db->where('datum', $datum);
 		$this->db->delete('events');
-		return $this->db->affected_rows();
+		if ($this->db->affected_rows() == '1'){
+			return TRUE;
+		}	
+		return FALSE;
 	}
 	/**
 	 * Deze functie voegt een waarde toe in die kolom foto 

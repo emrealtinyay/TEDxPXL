@@ -102,7 +102,7 @@ class login extends CI_Controller {
 						$this->send_reset_password_email($email, $username);
 
 						/* views worden gelande */
-						$this->load->view('header_logged_out_view');
+						$this->load->view('header_logged_out_other_view');
 						$this->load->view('reset_password_sent_view', array('email' => $email));
 						$this->load->view('footer_view');	
 					}
