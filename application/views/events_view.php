@@ -3,7 +3,9 @@
 						<div class="paralaxMask"></div>
 						<div class="paralaxText container">
 				
-							<blockquote class="bigTitle">You know you had fun when you can't tell your parents what you did.</blockquote>
+							<blockquote class="bigTitle">It has become appallingly obvious that our 
+								technology has exceeded our humanity.</blockquote>
+								Albert Einstein
 						</div>
 					</div>
 				</div>

@@ -2,11 +2,8 @@
 						<div class="maskParent">
 							<div class="paralaxMask"></div>
 							<div class="paralaxText">
-								<blockquote class="mt15">Live for today.
-														Plan for tomorrow.
-														Party tonight!<br/>
-									<small>DRAKE </small>
-								</blockquote>
+								<blockquote class="mt15">The real problem is not whether machines think but whether men do.</blockquote>
+									<small>B. F. Skinner</small>
 							</div>
 						</div>
 					</div>

@@ -3,7 +3,8 @@
 							<div class="paralaxMask"></div>
 
 							<div class="paralaxText">
-								<blockquote>Keep in touch with us.</blockquote>
+								<blockquote>What new technology does is <br>create new opportunities to do a job that customers want done.</blockquote>
+								<small>Tim O'Reilly<small>
 							</div>
 						</div>
 					</div>

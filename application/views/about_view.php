@@ -3,10 +3,8 @@
  						<div class="paralaxMask"></div> 
  						<div class="paralaxText container"> 
  							<i class="icon-megaphone "></i> 
- 							<blockquote class="bigTitle">We are the people 
- 								<br>our parents warned us about<br> 
- 								<small>UNKNOWN</small> 
- 							</blockquote> 
+ 							<blockquote class="bigTitle">Innovation is a journey. 
+ 								<br>It is a type of collaborative<br> problem-solving.</blockquote> 
  						</div> 
 					</div>
 				</div>			
