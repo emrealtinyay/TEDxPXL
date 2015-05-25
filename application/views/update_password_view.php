@@ -20,11 +20,11 @@
 					<input type="password" name="password_conf" class="form-control" value=""/>
 				</span>
 			</td>
-			<td><?php echo $message;?></td>
 			<tr>
 				<td>
 					<input type="submit" name="submit" value="Update My Password" class="btn-custom-verzend"/>
 				</td>
+				<td><?php echo $message;?></td>
 			</tr>		 
 		</tr>
 	</form>

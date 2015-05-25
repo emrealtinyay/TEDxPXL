@@ -1,0 +1,19 @@
+controllers
+------------
+1) admin --> maakEvent functie commentaar voorzien (boven het functie met @author,@param enz)
+2) fullpage --> display functie commentaar voorzien (boven het functie met @author,@param enz)
+3) fullpage_logged_in --> alle functies commentaar voorzien (boven het functie met @author,@param enz)
+4) login --> alle functies commentaar voorzien (boven het functie met @author,@param enz)
+5) login --> bij sommige plaatsen moeten er reactie pagina's (views) voorzien worden !!
+
+
+models
+-------
+1) zoek alle niet gebruikde functies op en verwijder dees (overbodige code)
+2) alle functies commentaar voorzien (boven het functie met @author,@param enz)
+
+Algemeen
+---------
+1) Als je bent ingelogd, heb je geen favicon en als je naar profile gaat heb je het logo van Hexion !!
+2) word bestand moet gemaakt met functionaliteiten enz, zie opdrachten van web
+3) zet alles op cd

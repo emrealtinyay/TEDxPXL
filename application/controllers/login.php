@@ -269,7 +269,9 @@ class login extends CI_Controller {
 					else 
 					{
 						/* hacker, probeert een anders email adres zijn wachtwoord te veranderen */
-						redirect('fullpage');
+						$this->load->view('header_logged_out_view');
+						$this->load->view('update_password_view', array('email' => $split[0].'@'.$split[1], 'message' => 'email adres niet veranderen !!'));
+						$this->load->view('footer_view');
 					} 
 					
 				}
