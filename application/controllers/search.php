@@ -17,7 +17,7 @@ class Search extends CI_Controller{
 		$this->load->model('profile_model');
 		$this->load->model('search_model');
 		$this->load->library('flexi_auth');
-	}
+	} 
     
     /**
 	 * Deze functie laad de profile pagina.

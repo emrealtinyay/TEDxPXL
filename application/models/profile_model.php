@@ -66,7 +66,13 @@ class profile_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('userdata');
 	}
-
+	/**
+	 *
+	 *  -
+	 * @author  Ali Eren
+	 *
+	 * @param 
+	 */
 	function checkEmail($email) 
 	{
 		$this->db->select('uacc_id');
@@ -83,7 +89,13 @@ class profile_model extends CI_Model {
 			return $query->row()->uacc_id;
 		} 
 	}
-
+	/**
+	 *
+	 *  -
+	 * @author  Ali Eren
+	 *
+	 * @param 
+	 */
 	function checkUsername($username) 
 	{	
 		$this->db->select('id');
@@ -100,7 +112,13 @@ class profile_model extends CI_Model {
 			return $query->row()->id;
 		}
 	}
-
+	/**
+	 *
+	 *  -
+	 * @author  Ali Eren
+	 *
+	 * @param 
+	 */
 	function update_changePassword($id, $changeTo)
 	{
 		if ($id != 0 ) 
@@ -126,7 +144,13 @@ class profile_model extends CI_Model {
 			$this->db->update('userdata', $newData);
 		}
 	}
-
+	/**
+	 *
+	 *  -
+	 * @author  Ali Eren
+	 *
+	 * @param 
+	 */
 	function get_changePassword($id) 
 	{
 		if ($id != 0 ) 
