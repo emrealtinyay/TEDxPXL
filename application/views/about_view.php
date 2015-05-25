@@ -30,6 +30,11 @@
 									About TEDx, x = independently organized event In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TEDTalks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
 								</p>
 							</div>
+							<div class="col-sm-4">
+								<a class="twitter-timeline" href="https://twitter.com/TEDx" data-widget-id="602836774596009985">Tweets door @TEDx</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+								</script>
+							</div>
 						</div>
 					</div>
 				</section>
